@@ -88,6 +88,13 @@ UINT App_ThreadX_Init(VOID *memory_ptr)
     ret = TX_THREAD_ERROR;
   }
 
+  /* Allocate the stack for ThreadOne.  */
+  if (tx_byte_allocate(byte_pool, (VOID **) &pointer,
+                       APP_STACK_SIZE, TX_NO_WAIT) != TX_SUCCESS)
+  {
+    ret = TX_POOL_ERROR;
+  }
+
   /* Create ThreadOne.  */
   if (tx_thread_create(&ThreadOne, "Thread One", ThreadOne_Entry, 0,
                        pointer, APP_STACK_SIZE,
