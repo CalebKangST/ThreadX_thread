@@ -46,7 +46,6 @@
 TX_THREAD MainThread;
 TX_THREAD ThreadOne;
 TX_THREAD ThreadTwo;
-TX_EVENT_FLAGS_GROUP EventFlag;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
